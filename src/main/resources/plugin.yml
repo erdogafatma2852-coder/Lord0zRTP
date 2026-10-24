@@ -1,0 +1,11 @@
+
+name: Lord0zRTP
+version: '1.0.0'
+main: me.lord0z.rtp.Lord0zRTP
+api-version: '26.2'
+description: JANCLUB random teleport system
+
+commands:
+  rtp:
+    description: SMP dunyasina rastgele isinlan
+    usage: /rtp
