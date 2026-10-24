@@ -1,0 +1,32 @@
+name: Build Lord0zRTP
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depoyu indir
+        uses: actions/checkout@v4
+
+      - name: Java 25 kur
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+
+      - name: Gradle kur
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: JAR derle
+        run: gradle build
+
+      - name: JAR dosyasini kaydet
+        uses: actions/upload-artifact@v4
+        with:
+          name: Lord0zRTP
+          path: build/libs/*.jar
